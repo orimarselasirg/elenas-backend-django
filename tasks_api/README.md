@@ -101,7 +101,7 @@ Este comando levantara el servidor y la conexion a la base de datos. Ya estás l
 En el siguiente link vas a tener acceso a la documentación de nuestra API
 <br/>
 <br/>
-📄 [Documentación](https://documenter.getpostman.com/view/20686333/2s8YmPth7c#2f1f3d41-4d84-423d-82dd-9dfb960be23c)
+📄 [Documentación](https://documenter.getpostman.com/view/20686333/2s8YmPth7c)
 <br/>
 <br/>
 Cualquier duda, por favor no dudes en comunicarte conmigo. Saludos
