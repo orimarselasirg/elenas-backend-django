@@ -46,8 +46,24 @@ En caso de aun no contar con una base de datos, sigue los siguientes pasos para 
    CREATE DATABASE elenas;
 ``` 
 - Veremos un mensaje de confirmación de que la base ha sido creada con éxito. A continuación podemos desplegar un listado de las bases de datos ejecutando el comando: 
+
 ```
    \l 
+```
+
+- Dentro del codigo en la carpeta "tasks_api", encontrara otra carpeta llamada de la misma manera, dentro hay una caperta llamada "settings" y dentro hay un archivo llamado local, dentro de ese archivo, se debe configurar los datos de conexion de la base de datos asi:
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nombre_de_la_base_de_datos_que_creaste',
+        'USERNAME': 'tu_usuario_de_postgres',
+        'PASSWORD': 'tu_contraseña_de_postgres',
+        'HOST': 'localhost',
+        'PORT': '5432'
+    }
+}
 ```
 <br/>
 <br/>
@@ -55,16 +71,17 @@ En caso de aun no contar con una base de datos, sigue los siguientes pasos para 
 
 Llegó el momento para ejecutar en tu equipo el proyecto.
 
-Abre la terminal desde tu editor de codigo o desde un consola aparte dentro de la carpeta tasks_api y ejecuta los siguientes comandos.
+debes realizar la instalacio de la dependiencia virtualenv asi:
+
 ```sh
-   pip install
+   pip install virtualenv
 ```
+posterior debes crear un entorno virtual de la siguiente manera:
 
-Con este comando descargar e instalara todas las dependencias que se utiliza en el proyecto de forma automática. El tiempo de este proceso depende de tu conexión a internet y del poder del procesamiento de tu equipo, ten paciencia, puede tardar unos minutos.
-
-<br>
-<h2>Ejecución  del proyecto 💻</h2>
-
+```sh
+  virtualenv 'nombredetuentornovirtual'
+  por ejemplo: virtualenv venv
+```
 Para realizar el despliegue local solo necesitas abrir una terminal en la raiz de la carpeta donde guardaste el repositorio en tu computador y ejecutar el comando.
 
 ```sh
@@ -73,20 +90,27 @@ Para realizar el despliegue local solo necesitas abrir una terminal en la raiz d
 ```
 porsteriormente en la misma carpeta raiz ejecutas el siguiente comando
 
-
 si estas en windows
 ```sh
    ./venv/Scripts/activate
 ```
+en caso de no funcionar el comando en windows utiliza el comando de Mac que esta a continuación
 
 si estas en Mac
 ```sh
    source venv/bin/activate
 ```
-Este comando genera el entorno virtual requerido para instalar las dependencias
+Este comando genera el entorno virtual requerido para instalar las dependencias dentro de la carpeta raiz, ingresa a tasks_api y ejecuta los siguientes comandos.
+```sh
+   pip install -r requirements.txt
+```
 
+Con este comando descargar e instalara todas las dependencias que se utiliza en el proyecto de forma automática. El tiempo de este proceso depende de tu conexión a internet y del poder del procesamiento de tu equipo, ten paciencia, puede tardar unos minutos.
 
-Posterior, se debe ejecutar el sigueinte comando dentro de la carpeta task_api que se encuentra en la carpeta principal
+<br>
+<h2>Ejecución  del proyecto 💻</h2>
+
+Posterior, se debe ejecutar el siguiente comando dentro de la carpeta task_api que se encuentra en la carpeta raiz
 
 ```sh
   python manage.py runserver
