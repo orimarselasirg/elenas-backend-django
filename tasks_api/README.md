@@ -25,19 +25,6 @@ Copia el repositorio haciendo click en Fork, así obtendrás una copia del mismo
 
 <br>
 <br>
-<h1>Para instalar 🛠 </h1>
-
-Llegó el momento para ejecutar en tu equipo el proyecto.
-
-Abre la terminal desde tu editor de codigo o desde un consola aparte dentro de la carpeta api_task y ejecuta los siguientes comandos.
-```sh
-   pip install
-```
-
-Con este comando descargar e instalara todas las dependencias que se utiliza en el proyecto de forma automática. El tiempo de este proceso depende de tu conexión a internet y del poder del procesamiento de tu equipo, ten paciencia, puede tardar unos minutos.
-
-<br>
-
 
 <h3>Creación de base de datos PostgreSQL</h3>
 En caso de aun no contar con una base de datos, sigue los siguientes pasos para crear una:
@@ -64,6 +51,18 @@ En caso de aun no contar con una base de datos, sigue los siguientes pasos para 
 ```
 <br/>
 <br/>
+<h1>Para instalar 🛠 </h1>
+
+Llegó el momento para ejecutar en tu equipo el proyecto.
+
+Abre la terminal desde tu editor de codigo o desde un consola aparte dentro de la carpeta tasks_api y ejecuta los siguientes comandos.
+```sh
+   pip install
+```
+
+Con este comando descargar e instalara todas las dependencias que se utiliza en el proyecto de forma automática. El tiempo de este proceso depende de tu conexión a internet y del poder del procesamiento de tu equipo, ten paciencia, puede tardar unos minutos.
+
+<br>
 <h2>Ejecución  del proyecto 💻</h2>
 
 Para realizar el despliegue local solo necesitas abrir una terminal en la raiz de la carpeta donde guardaste el repositorio en tu computador y ejecutar el comando.
