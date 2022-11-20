@@ -1,1 +1,0 @@
-# elenas-backend-django2
