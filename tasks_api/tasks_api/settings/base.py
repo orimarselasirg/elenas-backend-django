@@ -14,7 +14,7 @@ if RENDER_EXTERNAL_HOSTNAME:
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
+
 # SECRET_KEY = 'django-insecure-hu9vle3x!1bi0wh&tr1th@dwm1l-b+!jvt+!m7bw3i-zzj8t3w'
 SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-hu9vle3x!1bi0wh&tr1th@dwm1l-b+!jvt+!m7bw3i-zzj8t3w')
 
