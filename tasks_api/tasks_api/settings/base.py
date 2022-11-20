@@ -1,16 +1,22 @@
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
 
 ALLOWED_HOSTS = []
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME') # con esto defino que la variable de entorno RENDER_HOST_NAME, es igual a esa variable de entorno que defino el RENDER
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME) # si la variable de tnrono RENDER_HOST_NAME existe, entonces lo pushea a los ALLOWED_HOSTS
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hu9vle3x!1bi0wh&tr1th@dwm1l-b+!jvt+!m7bw3i-zzj8t3w'
+# SECRET_KEY = 'django-insecure-hu9vle3x!1bi0wh&tr1th@dwm1l-b+!jvt+!m7bw3i-zzj8t3w'
+SECRET_KEY = os.environ.get('SECRET_KEY', default='django-insecure-hu9vle3x!1bi0wh&tr1th@dwm1l-b+!jvt+!m7bw3i-zzj8t3w')
 
 # Application definition
 
@@ -49,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'simple_history.middleware.HistoryRequestMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'tasks_api.urls'
@@ -113,6 +120,10 @@ AUTH_USER_MODEL = 'users.User'
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+if not DEBUG:
+    STATIC_URL = os.path.join(BASE_DIR, 'staticFiles')
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
