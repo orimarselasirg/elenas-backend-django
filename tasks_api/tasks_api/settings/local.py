@@ -11,7 +11,7 @@ ALLOWED_HOSTS = []
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'elenas',
+        'NAME': 'elenas2',
         'USERNAME': 'postgres',
         'PASSWORD': 'R4M1R0.8489',
         'HOST': 'localhost',
